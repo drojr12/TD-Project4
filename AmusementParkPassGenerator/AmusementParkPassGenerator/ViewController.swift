@@ -17,8 +17,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Comment which method you want to run!
         
-        setupGuestEntrants()
-        //setupEmployeeEntrants()
+        //setupGuestEntrants()
+        setupEmployeeEntrants()
         
         //setupEmployeeEntrantsForErrorTesting()
         //setupGuestEntrantsForErrorTesting()

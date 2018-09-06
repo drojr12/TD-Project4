@@ -28,11 +28,14 @@ class Employee: Entrant {
         
         if entrantType == .employeeFoodServices {
             //Show the area access priviledges
-            if areaAccess[0] == .amusementAreas {
-                print("This employee has access to the Amusement Areas")
-            }
-            if areaAccess[1] == .kitchenAreas {
-                print("This employee has access to the Kitchen Areas")
+            for index in 0...areaAccess.count - 1 {
+                if areaAccess[index] == .amusementAreas {
+                    print("This employee has access to the Amusement Areas")
+                }
+                
+                if areaAccess[index] == .kitchenAreas {
+                    print("This employee has access to the Kitchen Areas")
+                }
             }
             
             //Show the ride access priviledge
@@ -62,8 +65,150 @@ class Employee: Entrant {
                 fatalError("\(error)")
             }
             
-        }
-    }
+        } else if entrantType == .employeeRideServices {
+            //Swipe code for employee Ride Services
+            //Show the area access priviledges
+            for index in 0...areaAccess.count - 1 {
+                if areaAccess[index] == .amusementAreas {
+                    print("This employee has access to the Amusement Areas")
+                }
+                
+                if areaAccess[index] == .rideControlAreas {
+                    print("This employee has access to the Ride Control Areas")
+                }
+            }
+                
+                //Show the ride access priviledge
+                if rideAccess == [.canAccessAllRides] {
+                    print("This Employee CAN access all the rides")
+                }
+                
+                //Show the percentage off discounts
+                print("This Employee has a \(percentDiscountForFood) percent off for Food and a \(percentDiscountForMerch) percent off of Merchandise")
+                
+                //Check to make sure Personal Information of the Employee exists and throw errors as needed
+                do {
+                    try checkToSeeIfPersonalInformationIsValid()
+                } catch PersonalInformationError.noFirstNameFound {
+                    print("Error: There has been no first name found!")
+                } catch PersonalInformationError.noLastNameFound {
+                    print("Error: There has been no last name found!")
+                } catch PersonalInformationError.noStreetAddressFound {
+                    print("Error: There has been no street adddress found!")
+                } catch PersonalInformationError.noCityFound {
+                    print("Error: There has been no city found!")
+                } catch PersonalInformationError.noStateFound {
+                    print("Error: There has been no state found!")
+                } catch PersonalInformationError.noZipcodeFound {
+                    print("Error: There has been no zipcode found!")
+                } catch let error {
+                    fatalError("\(error)")
+                }
+                
+            } else if entrantType == .employeeMaintenance {
+            //Swipe code for employee Maintenance
+            //Show the area access priviledges
+            for index in 0...areaAccess.count - 1 {
+                if areaAccess[index] == .amusementAreas {
+                    print("This employee has access to the Amusement Areas")
+                }
+                
+                if areaAccess[index] == .kitchenAreas {
+                    print("This employee has access to the Kitchen Areas")
+                }
+                
+                if areaAccess[index] == .rideControlAreas {
+                    print("This employee has access to the Ride Control Areas")
+                }
+                
+                if areaAccess[index] == .maintenanceAreas {
+                    print("This employee has access to the Maintenance Areas")
+                }
+            }
+            
+                //Show the ride access priviledge
+                if rideAccess == [.canAccessAllRides] {
+                    print("This Employee CAN access all the rides")
+                }
+                
+                //Show the percentage off discounts
+                    print("This Employee has a \(percentDiscountForFood) percent off for Food and a \(percentDiscountForMerch) percent off of Merchandise")
+                
+                //Check to make sure Personal Information of the Employee exists and throw errors as needed
+                do {
+                    try checkToSeeIfPersonalInformationIsValid()
+                } catch PersonalInformationError.noFirstNameFound {
+                    print("Error: There has been no first name found!")
+                } catch PersonalInformationError.noLastNameFound {
+                    print("Error: There has been no last name found!")
+                } catch PersonalInformationError.noStreetAddressFound {
+                    print("Error: There has been no street adddress found!")
+                } catch PersonalInformationError.noCityFound {
+                    print("Error: There has been no city found!")
+                } catch PersonalInformationError.noStateFound {
+                    print("Error: There has been no state found!")
+                } catch PersonalInformationError.noZipcodeFound {
+                    print("Error: There has been no zipcode found!")
+                } catch let error {
+                    fatalError("\(error)")
+                }
+            
+        } else if entrantType == .manager {
+            
+            //Show the area access priviledges
+            for index in 0...areaAccess.count - 1 {
+                if areaAccess[index] == .amusementAreas {
+                    print("This employee has access to the Amusement Areas")
+                }
+                
+                if areaAccess[index] == .kitchenAreas {
+                    print("This employee has access to the Kitchen Areas")
+                }
+                
+                if areaAccess[index] == .rideControlAreas {
+                    print("This employee has access to the Ride Control Areas")
+                }
+                
+                if areaAccess[index] == .maintenanceAreas {
+                    print("This employee has access to the Maintenance Areas")
+                }
+                
+                if areaAccess[index] == .officeAreas {
+                    print("The employee has access to the Office Areas")
+                }
+                
+            }
+            
+            //Show the ride access priviledge
+            if rideAccess == [.canAccessAllRides] {
+                print("This Employee CAN access all the rides")
+            }
+            
+            //Show the percentage off discounts
+            print("This Employee has a \(percentDiscountForFood) percent off for Food and a \(percentDiscountForMerch) percent off of Merchandise")
+            
+            //Check to make sure Personal Information of the Employee exists and throw errors as needed
+            do {
+                try checkToSeeIfPersonalInformationIsValid()
+            } catch PersonalInformationError.noFirstNameFound {
+                print("Error: There has been no first name found!")
+            } catch PersonalInformationError.noLastNameFound {
+                print("Error: There has been no last name found!")
+            } catch PersonalInformationError.noStreetAddressFound {
+                print("Error: There has been no street adddress found!")
+            } catch PersonalInformationError.noCityFound {
+                print("Error: There has been no city found!")
+            } catch PersonalInformationError.noStateFound {
+                print("Error: There has been no state found!")
+            } catch PersonalInformationError.noZipcodeFound {
+                print("Error: There has been no zipcode found!")
+            } catch let error {
+                fatalError("\(error)")
+            }
+            
+            
+        }//End of if statements for Entrant type
+    }//End of Employee Swipe method
     
     func checkToSeeIfPersonalInformationIsValid() throws {
         if let firstName = entrantInformation?.firstName {
